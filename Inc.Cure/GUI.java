@@ -10,12 +10,11 @@ import java.net.URL;
 
 public class GUI {
 
-
 	
     public GUI() {
         JFrame frame =  new JFrame();
         
-        JPanel story = new JPanel();
+       
 
         JButton start = new JButton("Start");
         JButton howToPlay = new JButton("How to Play");
@@ -51,8 +50,9 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("go to story");
-
-			changeScene(titlePanel, story);
+				frame.setVisible(false);
+				new StoryScene();
+				changeScene(titlePanel, StoryScene.story);
 			}
         });
 
@@ -67,24 +67,22 @@ public class GUI {
         frame.setVisible(true);
        
     }
-    public static void main(String[] args) {
-        new GUI();
-        
-    }
     
     public void changeScene(JPanel old, JPanel newScene) {
     	//removes current
 		old.removeAll();
 		old.repaint();
 		old.revalidate();
-
 		//add new panel
-
 		old.add(newScene);
 		old.repaint();
 		old.revalidate();
     }
  
+    
+    
+
+    
     
 }
 
