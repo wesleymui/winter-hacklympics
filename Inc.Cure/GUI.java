@@ -16,11 +16,7 @@ public class GUI {
         JFrame frame =  new JFrame();
         
         JPanel story = new JPanel();
-        
 
-        
-        
-        
         JButton start = new JButton("Start");
         JButton howToPlay = new JButton("How to Play");
         JLabel label = new JLabel("<html><div style = 'text-align: center;'>" + "Welcome to Cure.Inc" +
@@ -55,16 +51,8 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println("go to story");
-				
-				//removes current
-				titlePanel.removeAll();
-				titlePanel.repaint();
-				titlePanel.revalidate();
-				
-				//add new panel
-				titlePanel.add(story);
-				titlePanel.repaint();
-				titlePanel.revalidate();
+
+			changeScene(titlePanel, story);
 			}
         });
 
@@ -84,6 +72,18 @@ public class GUI {
         
     }
     
+    public void changeScene(JPanel old, JPanel newScene) {
+    	//removes current
+		old.removeAll();
+		old.repaint();
+		old.revalidate();
+
+		//add new panel
+
+		old.add(newScene);
+		old.repaint();
+		old.revalidate();
+    }
  
     
 }
