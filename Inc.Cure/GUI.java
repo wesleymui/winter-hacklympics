@@ -10,8 +10,16 @@ import java.net.URL;
 
 public class GUI {
 
+
+	
     public GUI() {
         JFrame frame =  new JFrame();
+        
+        JPanel story = new JPanel();
+        
+
+        
+        
         
         JButton start = new JButton("Start");
         JButton howToPlay = new JButton("How to Play");
@@ -46,10 +54,20 @@ public class GUI {
         start.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("fgo to story");
+				System.out.println("go to story");
 				
+				//removes current
+				titlePanel.removeAll();
+				titlePanel.repaint();
+				titlePanel.revalidate();
+				
+				//add new panel
+				titlePanel.add(story);
+				titlePanel.repaint();
+				titlePanel.revalidate();
 			}
         });
+
         
         assert background != null;
         frame.add(new BackgroundPanel(background.getImage()));
@@ -65,6 +83,9 @@ public class GUI {
         new GUI();
         
     }
+    
+ 
+    
 }
 
 /*
