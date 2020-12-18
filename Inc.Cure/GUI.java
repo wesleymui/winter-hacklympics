@@ -10,11 +10,9 @@ import java.net.URL;
 
 public class GUI {
 
-	
-    public GUI() {
-        JFrame frame =  new JFrame();
-        
-       
+	static JFrame frame =  new JFrame();
+   
+	public GUI() {
 
         JButton start = new JButton("Start");
         JButton howToPlay = new JButton("How to Play");
@@ -46,16 +44,18 @@ public class GUI {
         titlePanel.add(start);
         titlePanel.add(howToPlay);
 
+        
+        // CODE STARTS HERE!!! TRAYC
         start.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("go to story");
-				frame.setVisible(false);
-				new StoryScene();
-				changeScene(titlePanel, StoryScene.story);
+				System.out.println("going to Story page"); // <--- This is for debugging
+				titlePanel.setVisible(false); // <-- sets current scene invisible
+				new StoryScene(); // <-- makes the next scene 
+				frame.add(StoryScene.story); // <-- displays scene
 			}
         });
-
+        //CODE ENDS HERE!!! TRAYC
         
         assert background != null;
         frame.add(new BackgroundPanel(background.getImage()));
@@ -68,6 +68,7 @@ public class GUI {
        
     }
     
+    /*
     public void changeScene(JPanel old, JPanel newScene) {
     	//removes current
 		old.removeAll();
@@ -78,7 +79,7 @@ public class GUI {
 		old.repaint();
 		old.revalidate();
     }
- 
+ 	*/
     
     
 
