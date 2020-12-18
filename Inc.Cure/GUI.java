@@ -20,7 +20,7 @@ public class GUI {
         titlePanel.setBorder(BorderFactory.createEmptyBorder(40, 40, 40, 40));
         titlePanel.setLayout(new GridLayout(0, 1));
         ImageIcon background = null;
-
+        
         titleScreen.setLayout(new GridBagLayout());
         titlePanel.setLayout(new GridBagLayout());
 
