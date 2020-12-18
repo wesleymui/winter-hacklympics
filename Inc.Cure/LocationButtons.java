@@ -2,7 +2,7 @@ import java.awt.Dimension;
 
 import javax.swing.JButton;
 
-public class LocationButtons{
+public class LocationButtons extends GUI{
 	
 	
 	public void goToSubway() {
