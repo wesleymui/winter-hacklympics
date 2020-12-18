@@ -41,6 +41,13 @@ public class GUI {
         titlePanel.add(start);
         titlePanel.add(howToPlay);
 
+        start.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Button actions go here
+            }
+        });
+        
         assert background != null;
         frame.add(new BackgroundPanel(background.getImage()));
         frame.add(titleScreen);
@@ -49,6 +56,7 @@ public class GUI {
         frame.setTitle("Cure.inc");
         frame.pack();
         frame.setVisible(true);
+       
     }
     public static void main(String[] args) {
         new GUI();
